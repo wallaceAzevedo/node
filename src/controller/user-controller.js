@@ -9,7 +9,7 @@ function getUsers(){
     return USERS;
 }
 
-exports.get = async(req, res, next) =>{
+exports.get = async(req, res, next) => {
     console.log('Entrou no nosso controller');
     res.send(getUsers());
 };
