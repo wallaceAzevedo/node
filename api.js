@@ -1,6 +1,12 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/curso_react',{
+   useNewUrlParser: true,
+   useUnifiedTopology: true,
+});
 
 var USERS =[
     {'id': 1, 'username': 'wallaceazevedo', 'password': '123456'},
