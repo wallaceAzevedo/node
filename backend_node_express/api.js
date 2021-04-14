@@ -8,7 +8,7 @@ var USERS =[
 ];
 
 var HELLO = [
-    {'msg': 'hello express'}
+    {'msg': 'Hello express'}
 ];
 
 function getHello(){
@@ -25,10 +25,16 @@ app.get('/', function(req, res){
     res.send(getHello());
 });
 
+app.get('/users', function(req, res){
+    res.send(getUsers());
+});
+
+/*
 const userRouter = require('./src/routes/user-route');
 
-app.use('/user', userRoute);
 
+app.use('/user', userRoute);
+*/
 app.listen(4000, function(){
     console.log('Hello Express listen on port 4000');
 });
