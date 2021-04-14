@@ -25,9 +25,9 @@ app.get('/', function(req, res){
     res.send(getHello());
 });
 
-const userRouter = require('./src/routes/user-route');
-
-app.use('/user', userRoute);
+app.get('/users', function(req, res){
+    res.send(getUsers());
+});
 
 /*
 const userRouter = require('./src/routes/user-route');
