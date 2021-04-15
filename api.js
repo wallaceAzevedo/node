@@ -25,10 +25,14 @@ app.use(bodyParser.json());
 app.get('/', function(req, res){
     res.send(getHello());
 });
+
+app.get('/users', function(req, res){
+    res.send(getHello());
+});
 /*
 const userRouter = require('./src/routes/user-route');
 
-app.use('/user', userRoute);
+app.use('/users', userRoute);
 */
 app.listen(4000, function(){
     console.log('Hello Express listen on port 4000');
