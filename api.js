@@ -30,12 +30,12 @@ app.use(bodyParser.json());
 app.get('/', function(req, res){
     res.send(getHello());
 });
-
+/*
 app.get('/users', function(req, res){
     res.send(getUsers());
 });
 
-/*
+
 
 const userRouter = require('./src/routes/user-route');
 
