@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.get('/', function(req, res){
     res.send(getHello());
 });
-/*
+
 app.get('/users', function(req, res){
     res.send(getUsers());
 });
@@ -40,7 +40,7 @@ app.get('/users', function(req, res){
 const userRouter = require('./src/routes/user-route');
 
 app.use('/user', userRoute);
-*/
+
 app.listen(4000, function(){
     console.log('Hello Express listen on port 4000');
 });
