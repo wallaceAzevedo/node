@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 require('../models/user');
-const User = mongoose.model('user');
+const User = mongoose.model('User');
 const projection = '_id name email creationDate';
 
 exports.getAll = async() => {
@@ -49,5 +49,14 @@ exports.update = async(data) => {
 }
 
 exports.delete = async(id, data) => {
-    return await User.findOneAndDelete({ })
+    return await User.findOneAndDelete({_id: id })
 }
+
+exports.deleteLogic = async(data) => {
+    console.log(data);
+      return await User.findByIdAndUpdate(id, {
+         $set: {
+             status: false
+         }
+  });
+ }
