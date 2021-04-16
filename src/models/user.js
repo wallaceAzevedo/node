@@ -7,7 +7,7 @@ const UserModel = new schema({
     name: {type:String, required: true, trim: true},
     email: {type:String, required: true, trim: true, unique:true},
     password: {type:String, required: true, trim: true, select:false},
-    status: {type:boolean, required: true, default:true},
+    status: {type:boolean, required: true, default: true},
     creationDate: {type:Date, default:Date.now }
 }, { versionKey:false });
 

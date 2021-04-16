@@ -8,38 +8,17 @@ mongoose.connect('mongodb://localhost:27017/curso_react',{
    useUnifiedTopology: true,
 });
 
-var USERS =[
-    {'id': 1, 'username': 'wallaceazevedo', 'password': '123456'},
-    {'id': 2, 'username': 'paul', 'password': '123456'},
-];
-
-var HELLO = [
-    {'msg': 'hello express'}
-];
-
-function getHello(){
-    return HELLO;
-}
-
-function getUsers(){
-    return USERS;
-}
-
 app.use(bodyParser.json());
 
 app.get('/', function(req, res){
     res.send(getHello());
 });
 
-app.get('/users', function(req, res){
-    res.send(getUsers());
-});
-
-
+const productRouter = require('./src/routes/product-route');
+app.use('/user', userRouter);
 
 const userRouter = require('./src/routes/user-route');
-
-app.use('/user', userRoute);
+app.use('/product', productRouter);
 
 app.listen(4000, function(){
     console.log('Hello Express listen on port 4000');

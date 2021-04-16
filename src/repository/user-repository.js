@@ -29,16 +29,7 @@ exports.create = async(data) => {
 
 exports.update = async(data) => {
    console.log(data);
-    /*
-    let userUpdate = await user.findByIdAndUpdate(id, {
-        $set:{
-            name: data.name,
-            email:data.email,
-            password: data.password,
-            status: data.status
-        }
-    }); */
-    return await User.findByIdAndUpdate(id, {
+     return await User.findByIdAndUpdate(id, {
         $set: {
             name: data.name,
             email: data.email,
